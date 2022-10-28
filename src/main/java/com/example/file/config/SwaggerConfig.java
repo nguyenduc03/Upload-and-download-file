@@ -20,17 +20,11 @@ public class SwaggerConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.example.file.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("API")
-                .description("api test")
-                .termsOfServiceUrl("http://hocungmentor.com")
-                .licenseUrl("hocungmentr@gmail.com").version("1.0").build();
-    }
+
 }
